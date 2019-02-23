@@ -1,14 +1,14 @@
-#some of this code taken from this tutorial: http://rstudio.github.io/shiny/tutorial/#hello-shiny
+#structure of this code (ie the library, shiinyUI(pageWithSideBar, 
+#headerPanel, sideBarPanel, selectInput,mainPanel but not the code inside of the parentheses))
+#from http://rstudio.github.io/shiny/tutorial/#hello-shiny and 
+#https://www.youtube.com/watch?v=_0ORRJqctHE
 
 library(shiny)
 library(datasets)
 
 shinyUI(pageWithSidebar(
   headerPanel(h1("Bar Charts Representing Employee Attitudes Toward Their Companies", align = "center") ),
-  
   sidebarPanel(align="center",width=10,
-               #sliderInput("", "Number of observations:", min = 1,max = 1000,value = 500)),
-  
   selectInput("dataset", "choose a questionnaire question topic:",
               choices = c("handling of employee complaints",
                           "does not allow special privileges",
@@ -17,9 +17,7 @@ shinyUI(pageWithSidebar(
                           "too critical",
                           "advancement"))),
   mainPanel(plotOutput("distPlot"))
-  
   )
-  
 )
 
 
